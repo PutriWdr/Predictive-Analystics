@@ -82,4 +82,57 @@ Pada berkas yang diunduh yakni cancer-breast.csv berisi 569 rows × 32 columns. 
 - **texture_mean** merupakan fitur yg merepresentasikan standar deviasi nilai skala abu-abu atau rata-rata Tekstur Permukaan
 - **perimeter_mean** merupakan rata-rata keliling.
 - **id** merupakan parameter bernilai unique. Parameter ini tidak penting untuk dimasukkan kedalam model, oleh karena itu parameter ini di drop.
-- 
+-   **symmetry_mean**  merupakan fitur yg merepresentasikan rata-rata Simetri
+-   **fractal_dimension_mean**  merupakan fitur yg merepresentasikan rata-rata dimensi fraktal atau "_coastline approximation_  — 1"
+-   **radius_se**  merupakan fitur yg merepresentasikan radius standard error
+-  **area_mean**  merupakan fitur yg merepresentasikan Rata-rata Luas Lobes
+-   **smoothness_mean**  merupakan fitur yg merepresentasikan Rata-rata Tingkat Kehalusan
+-   **compactness_mean**  merupakan fitur yg merepresentasikan Rata-rata Kekompakan atau keliling² / luas — 1.0
+-   **concavity_mean**  merupakan fitur yg merepresentasikan rata-rata kecekungan atau keparahan bagian cekung dari contour
+-   **concave points_mean**  merupakan fitur yg merepresentasikan rata-rata titik cekung atau jumlah bagian cekung dari contour
+-  **texture_se**  merupakan fitur yg merepresentasikan texture standard error
+-   **perimeter_se**  merupakan fitur yg merepresentasikan perimeter standard error
+-   **area_se**  merupakan fitur yg merepresentasikan luas standar error
+-   **smoothness_se**  merupakan fitur yg merepresentasikan smoothness standard error
+-   **compactness_se**  merupakan fitur yg merepresentasikan compactness standard error
+-   **concavity_se**  merupakan fitur yg merepresentasikan concavity standard error
+- **area_worst**  merupakan fitur yg merepresentasikan area terendah
+-   **smoothness_worst**  merupakan fitur yg merepresentasikan tingkat kehalusan terendah
+-   **compactness_worst**  merupakan fitur yg merepresentasikan compactness terendah
+-   **concavity_worst**  merupakan fitur yg merepresentasikan kecekungan terendah
+-   **concave points_worst**  merupakan fitur yg merepresentasikan titik cekung terendah
+-   **symmetry_worst**  merupakan fitur yg merepresentasikan symmetry terendah
+- **concave points_se**  merupakan fitur yg merepresentasikan titik cekung standard error
+-   **symmetry_se**  merupakan fitur yg merepresentasikan symmetry standard error
+-   **fractal_dimension_se**  merupakan fitur yg merepresentasikan fractal dimension standard error
+-   **radius_worst**  merupakan fitur yg merepresentasikan radius terendah
+-   **texture_worst**  merupakan fitur yg merepresentasikan texture terendah
+-   **perimeter_worst**  merupakan fitur yg merepresentasikan perimeter terendah
+- **fractal_dimension_worst**  merupakan fitur yg merepresentasikan fractional dimensi terendah
+
+Berikut ini tahapan sebelum visualisasi data pada data preparation sebagai berikut:
+
+-   Meload Dataset ke dalam sebuah Dataframe menggunakan pandas
+-   `df.info()`  digunakan untuk mengecek tipe kolom pada dataset.
+-   `df.isna().sum()`  digunakan untuk mengecek apakah ada kolom yang kosong, pada dataset ini nilai kosong tidak ditemukan.
+-   `df.describe()`  digunakan untuk mendapatkan info mengenai dataset pada nilai rata-rata, median, banyaknya data, nilai Q1 sampai Q3 dan lain-lain.
+
+Berikut ini tahapan visualisasi data pada data preparation:
+
+-   Membagi dataset kedalam 2 bentuk variable, yaitu variable untuk kolom tipe numerik dan variable kolom untuk tipe object
+-   Lalu, melakukan visualisasi distribusi categorial, dimana ini digunakan untuk menghitung jumlah sample Kanker Ganas atau positif (M) dan kanker Jinak atau negatif (B). pada project ini terdapat 357 jumlah data sampel kanker jinak (B) dan 212 data sample kanker ganas (M).
+
+![download (1)](https://user-images.githubusercontent.com/111127023/192125476-80085b3d-e4c8-4616-8829-b8211e1d5c5c.png)
+
+- Kemudian, melakukan visualisasi distribusi numerik yang dapat dilihat lebih rinci sebagai berikut:
+![download (2)](https://user-images.githubusercontent.com/111127023/192125506-4eae92e0-c5b2-4009-b0eb-b2fad0b694a3.png)
+
+- Lalu, visualisasi dilakukan untuk mengetahui korelasi antar fitur yg terdapat pada dataset sebagai berikut:
+![download (3)](https://user-images.githubusercontent.com/111127023/192125529-9870c661-ed48-4a0c-8221-6919b67269ba.png)
+
+# DATA PREPARATION
+-- --
+Berikut adalah tahapan-tahapan dalam melakukan pra-pemrosesan data:
+
+Melakukan pengecekan terhadap kolom diagnosis (fitur target) yang bertipe object. dimana kategori B merupakan sample Kanker Jinak dan M merupakan sample Kanker Ganas. fitur ini mengindintikasikan bahwa dari sample terdapat kategori kanker yang bersifat jinak dan kanker yang bersifat ganas. inilah fitur target yg ingin coba di prediksi pada project ini.
+
