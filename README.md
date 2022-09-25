@@ -134,5 +134,67 @@ Berikut ini tahapan visualisasi data pada data preparation:
 -- --
 Berikut adalah tahapan-tahapan dalam melakukan pra-pemrosesan data:
 
-Melakukan pengecekan terhadap kolom diagnosis (fitur target) yang bertipe object. dimana kategori B merupakan sample Kanker Jinak dan M merupakan sample Kanker Ganas. fitur ini mengindintikasikan bahwa dari sample terdapat kategori kanker yang bersifat jinak dan kanker yang bersifat ganas. inilah fitur target yg ingin coba di prediksi pada project ini.
+- Melakukan pengecekan terhadap kolom diagnosis (fitur target) yang bertipe object. dimana kategori B merupakan sample Kanker Jinak dan M merupakan sample Kanker Ganas. fitur ini mengindintikasikan bahwa dari sample terdapat kategori kanker yang bersifat jinak dan kanker yang bersifat ganas. inilah fitur target yg ingin coba di prediksi pada project ini.
+
+![WhatsApp Image 2022-09-25 at 09 33 12](https://user-images.githubusercontent.com/111127023/192156476-8818ed8c-db59-42b8-83f9-fa89bd0a9692.jpeg)
+
+-  Melakukan mapping pada kolom diagnosis dari type object ke numerik agar bisa dibaca mesin. Dimana kanker jinak diubah ke nilai 0 dan kanker ganas diubah ke nilai 1.
+![WhatsApp Image 2022-09-25 at 09 37 46](https://user-images.githubusercontent.com/111127023/192156531-8add6dec-79f6-43e5-8b10-a2ab74a5e775.jpeg)
+
+- Melakukan perhitungan jumlah baris terhadap kolom target.
+![WhatsApp Image 2022-09-25 at 09 40 28](https://user-images.githubusercontent.com/111127023/192156571-f69145e1-9e5f-41b8-930d-728c0568ed9f.jpeg)
+
+- Melakukan pembagian dataset menjadi dengan 80% untuk data latih dan 20% untuk data uji Setelah melakukan pra-pemrosesan ke dataset, Data latih adalah data yang hanya digunakan untuk melatih model, sedangkan data uji adalah data yang hanya digunakan sebagai ujicoba model. Pembagian dataset ini menggunakan modul train_test_split dari scikit-learn.
+![WhatsApp Image 2022-09-25 at 09 41 54](https://user-images.githubusercontent.com/111127023/192156617-563173c8-39c3-49ce-87b7-988a471f4fa0.jpeg)
+
+- Melakukan standardisasi data pada semua fitur data. Tahap terakhir yaitu melakukan standarisasi data. Hal ini dilakukan untuk membuat semua fitur berada dalam skala data yang sama yaitu dengan range 0-1. Strandadisasi data ini menggunakan fungsi StandardScaler dengan rumus:
+![rumus](https://user-images.githubusercontent.com/111127023/192156722-8fee18db-d739-4a02-ab30-fa61ad93d384.png)
+
+# MODELING
+-- --
+Kemudian, setelah selesai dilakukan pra-pemrosesan pada dataset. Selanjutnya, modeling terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu Random Forest dan K-Nearest Neighbor dengan tanpa parameter tambahan. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji. Terakhir kedua model akan diukur nilai akurasinya. Perbandingan Hasil dari kedua seperti:
+![WhatsApp Image 2022-09-25 at 09 47 51](https://user-images.githubusercontent.com/111127023/192156817-adbd527d-9bfc-4a74-b16b-74d6dfe0571d.jpeg)
+
+Pada model dengan algoritma Random Forest memiliki nilai akurasi, f1-score, recall dan precision sedikit lebih tinggi dibanding dengan algoritma K-Nearest Neighbor. Untuk membuktikannya, kedua model tersebut diuji pada data uji dan di visualisasikan pada confussion matrix seperti:
+
+- Confussion Matrix Algoritma Random Forest
+ Algoritma dibawah menjelaskan bahwa bagian atas kiri merepresentasikan TN (True negatif) yaitu data negatif yg diprediksi benar, dan bagian bawah kanan merupakan data positif yg di prediksi benar, selain itu merupakan data false negatif (atas kanan) dan false positif (bawah kiri), dimana hasil itu merupakan data negatif namun diprediksi positif maupun sebaliknya.
+
+![WhatsApp Image 2022-09-25 at 09 48 35](https://user-images.githubusercontent.com/111127023/192156846-aeac6e26-d055-45a7-9788-508b137e413d.jpeg)
+
+- Confussion Matrix Algoritma K-Nearest Neighbor
+ Pada algoritma K-NN tidak jauh berbeda dengan algoritma random forest dimana bagian atas kiri merepresentasikan TN (True Negatif) yaitu data negatif yg diprediksi benar, dan bagian bawah kanan merupakan data positif yg di prediksi benar, selain itu merupakan data false negatif (atas kanan) dan false positif (bawah kiri), dimana hasil itu merupakan data negatif namun diprediksi positif maupun sebaliknya.
+ 
+Dengan hasil diatas dimana algoritma random forest menghasilkan nilai akurasi yg sedikit lebih tinggi, maka model dengan algoritma Random Forest merupakan model yang dipilih untuk digunakan pada project ini.
+![WhatsApp Image 2022-09-25 at 09 49 16](https://user-images.githubusercontent.com/111127023/192156851-c1bc4c1c-c4ad-4b6a-81d4-bdf4c70bec6f.jpeg)
+
+# EVALUATION
+-- --
+Pada proyek ini, model yang dikembangkan adalah kasus klasifikasi dan menggunakan metriks akurasi, f1-score, recall dan precision. Berikut hasil pengukuran model yang dipilih yaitu model yang menggunakan algoritma Random Forest metriks akurasi, f1-score, recall dan precision.
+
+![WhatsApp Image 2022-09-25 at 09 50 45](https://user-images.githubusercontent.com/111127023/192157025-326eb93c-9f99-4535-95a6-6379dd5614fb.jpeg)
+
+Akurasi Akurasi ialah metrik untuk menghitung persentase dari total data yang diidentifikasi dan dinilai benar dengan rumus:
+
+![rumus1](https://user-images.githubusercontent.com/111127023/192157163-b38d0145-902b-4d8f-a53a-f4f7431dc4e9.png)
+
+- True Positive (TP): Kasus dimana model merupakan data positif yang diprediksi benar. Contohnya, pasien menderita kanker (class 1) dan dari model yang dibuat memprediksi pasien tersebut menderita kanker (class 1).
+- True Negative (TN): Kasus dimana model merupakan data negatif yang diprediksi benar. Contohnya, pasien tidak menderita kanker (class 2) dan dari model yang dibuat memprediksi pasien tersebut tidak menderita kanker (class 2).
+- False Positive (FP) - Type I Error : Kasus dimana model merupakan data negatif namun diprediksi sebagai data positif. Contohnya, pasien tidak menderita kanker (class 2) tetapi dari model yang telah memprediksi pasien tersebut menderita kanker (class 1).
+- False Negative (FN) - Type II Error : Kasus dimana model merupakan data negatif namun diprediksi sebagai data positif. Contohnya, pasien tidak menderita kanker (class 2) tetapi dari model yang telah memprediksi pasien tersebut menderita kanker (class 1).
+
+- Precision Precision merupakan metrik untuk memprediksi benar positif dari keseluruhan hasil yang diprediksi positf. Rumus precision seperti:
+
+![rumus2](https://user-images.githubusercontent.com/111127023/192157235-a9c261e4-ce60-4af2-ba85-6c27c463d555.png)
+
+- Recall Recall merupakan metrik untuk memprediksi benar positif dibandingkan dengan keseluruhan data yang benar positif. Rumus precision:
+
+![rumus3](https://user-images.githubusercontent.com/111127023/192157266-ffe0ea03-3adf-4f96-82ad-63ad5d1e660c.png)
+
+- f1-score f1-score merupakan metrik untuk perbandingan rata-rata precision dan recall yang dibobotkan. Rumus f1-score
+
+![rumus4](https://user-images.githubusercontent.com/111127023/192157287-41a5fca2-d236-4bbf-ba1b-794de4924cc6.png)
+
+# REFERENSI
+-- --
 
