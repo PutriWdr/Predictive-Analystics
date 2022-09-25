@@ -63,6 +63,23 @@ Berdasarkan tujuan di atas dapat dihasilkan solusi dari proyek ini antara lain:
          
 ## DATA UNDERSTANDING
 
-![dataset](https://drive.google.com/file/d/1NhgD7pWwa3Gwp8_DkXCSRSY1N3WVk85W/view?usp=sharing)
+![WhatsApp Image 2022-09-24 at 14 41 30](https://user-images.githubusercontent.com/111127023/192123841-bdaefced-5909-44ed-a212-7377dcd4c0ac.jpeg)
+
 
 Data pada project ini menggunakan data yang bersumber pada sebuah situs kaggle, dimana fokus pada data tersebut menjelaskan faktor-faktor yang akan mempengaruhi sebuah penyakit kanker payudara bersifat ganas dan jinak. Informasi dataset dapat dilihat pada tabel dibawah ini :
+
+| Jenis  | Keterangan |
+| ----- | --- |
+| Lisensi  | CC0: Public Domain  |
+| Sumber | https://www.kaggle.com/datasets/yasserh/breast-cancer-dataset  |
+| Kategori  | Cancer, Women, Healthcare |
+| Jenis dan Ukuran Berkas | CSV (124.57 kB) |
+
+Pada berkas yang diunduh yakni cancer-breast.csv berisi 569 rows × 32 columns. Kolom-kolom tersebut terdiri dari 1 buah kolom bertipe objek dan 31 buah kolom bertipe numerik (tipe data float64). Dimana, penjelasan mengenai variabel-variable pada dataset cancer breast ini terdiri dari:
+
+- **diagnosis** merupakan fitur target pada dataset ini, bertipe object yang terdiri dari (M,B). Dimana data tersebut menjelaskan diagnosis kanker bersifat Ganas (M) atau Jinak (B)  
+- **radius_mean** merupakan fitur yg merepresentasikan nilai rata-rata jarak dari pusat ke titik pada keliling sekitar payudara/benjolan
+- **texture_mean** merupakan fitur yg merepresentasikan standar deviasi nilai skala abu-abu atau rata-rata Tekstur Permukaan
+- **perimeter_mean** merupakan rata-rata keliling.
+- **id** merupakan parameter bernilai unique. Parameter ini tidak penting untuk dimasukkan kedalam model, oleh karena itu parameter ini di drop.
+- 
