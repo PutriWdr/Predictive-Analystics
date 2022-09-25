@@ -6,8 +6,11 @@
 	 Domain proyek yang saya pilih ialah tema kesehatan dengan judul proyek "Prediksi Penyakit Kanker Payudara pada Manusia atau Wanita".
 **Latar Belakang**
 
-Kanker payudara merupakan kanker paling umum pada wanita di seluruh dunia dengan menyumbang 25,4% dari total jumlah kasus baru yang didiagnosis pada tahun 2018. Kanker adalah sekelompok besar penyakit yang dapat dimulai di hampir semua organ atau jaringan tubuh ketika sel abnormal tumbuh tak terkendali, melampaui batas biasanya untuk menyerang bagian tubuh yang berdekatan dan atau menyebar ke organ lain. Merujuk data yang dipaparkan Kemenkes per 31 Januari 2019, terdapat angka kanker payudara 42,1 per 100.000 penduduk dengan rata-rata kematian 17 per 100.000 penduduk[3]. Penyakit ini merupakan salah satu penyakit yang menjadi momok bagi kaum wanita walaupun tidak menutup kemungkinan pria juga bisa terkena penyakit ini. Dimana, menjadi momok bagi kaum wanita karena penyakit ini menyerang bagian tubuh yang menjadi salah satu ciri khas kaum wanita. Kanker payudara merupakan penyakit yang tidak menular yang cenderung terus meningkat setiap tahunnya, sehingga dapat dikatakan bahwa beban yang harus ditanggung dunia akibat penyakit tersebut semakin meningkat[4]. Mulai dari tahun 2008 terdapat 12,7 juta kasus kanker di dunia dan terus menerus mengalami peningkatan hingga tahun 2018 menjadi 18,1 juta kasus kanker. Kematian yang disebabkan oleh kanker juga mengalami peningkatan dari 7,6 juta pada tahun 2008 menjadi 9,6 juta pada tahun 2018. IARC menyatakan bahwa terjadi peningkatan kasus kanker payudara yang menyerang wanita dengan tingkat kematian sebesar 627.000 di seluruh dunia. Berdasarkan data dari Riset Kesehatan Dasar (RISKESDAS) tahun 2018 jumlah kejadian kanker payudara yang menyerang wanita adalah sebesar 42,1 per 100.000 penduduk dengan rata-rata kematian 17 per 100.000 penduduk dan data pada tahun 2012 sebesar 12,1 per 100.000 penduduk dengan jumlah kematian secara keseluruhan adalah 522.000[5]. 
-Dengan demikian, data tersebut menunjukkan setiap tahunnya terjadi peningkatan kejadian kanker payudara di Indonesia. Oleh karena itu, dibutuhkan simpati dan empati setiap orang karena masalah ini ialah masalah yang serius yang dialami oleh seorang wanita atau ibu menyusui. Untuk itu, dibuatlah sebuah model machine learning yang bertujuan memprediksi apakah seseorang yang menderita penyakit kanker payudara dengan diagnosis kanker ganas atau jinak. Dengan adanya model machine learning ini diharapkan sebagai salah satu solusi pekerjaan dokter dalam mengindentifikasi penyakit kanker lebih awal.
+Kanker payudara ialah kanker paling umum pada wanita di seluruh dunia dengan menyumbang 25,4% dari total jumlah kasus baru yang didiagnosis pada tahun 2018. Kanker adalah sekelompok besar penyakit yang dapat dimulai di hampir semua organ atau jaringan tubuh ketika sel abnormal tumbuh tak terkendali, melampaui batas biasanya untuk menyerang bagian tubuh yang berdekatan dan atau menyebar ke organ lain [1]. Merujuk data yang dipaparkan Kemenkes per 31 Januari 2019, terdapat angka kanker payudara 42,1 per 100.000 penduduk dengan rata-rata kematian 17 per 100.000 penduduk [2]. Penyakit ini merupakan salah satu penyakit yang menjadi momok bagi kaum wanita walaupun tidak menutup kemungkinan pria juga bisa terkena penyakit ini. Dimana, menjadi momok bagi kaum wanita karena penyakit ini menyerang bagian tubuh yang menjadi salah satu ciri khas kaum wanita. Kanker payudara merupakan penyakit yang tidak menular yang cenderung terus meningkat setiap tahunnya, sehingga dapat dikatakan bahwa beban yang harus ditanggung dunia akibat penyakit tersebut semakin meningkat [3]. 
+
+Mulai dari tahun 2008 terdapat 12,7 juta kasus kanker di dunia dan terus menerus mengalami peningkatan hingga tahun 2018 menjadi 18,1 juta kasus kanker. Kematian yang disebabkan oleh kanker juga mengalami peningkatan dari 7,6 juta pada tahun 2008 menjadi 9,6 juta pada tahun 2018. IARC menyatakan bahwa terjadi peningkatan kasus kanker payudara yang menyerang wanita dengan tingkat kematian sebesar 627.000 di seluruh dunia. Berdasarkan data dari Riset Kesehatan Dasar (RISKESDAS) tahun 2018 jumlah kejadian kanker payudara yang menyerang wanita adalah sebesar 42,1 per 100.000 penduduk dengan rata-rata kematian 17 per 100.000 penduduk dan data pada tahun 2012 sebesar 12,1 per 100.000 penduduk dengan jumlah kematian secara keseluruhan adalah 522.000 [4]. Dengan demikian, data tersebut menunjukkan setiap tahunnya terjadi peningkatan kejadian kanker payudara di Indonesia. 
+
+Oleh karena itu, dibutuhkan simpati dan empati setiap orang karena masalah ini ialah masalah yang serius yang dialami oleh seorang wanita atau ibu menyusui. Untuk itu, dibuatlah sebuah model machine learning yang bertujuan memprediksi apakah seseorang yang menderita penyakit kanker payudara dengan diagnosis kanker ganas atau jinak. Dengan adanya model machine learning ini diharapkan sebagai salah satu solusi pekerjaan dokter dalam mengindentifikasi penyakit kanker lebih awal.
 
 ## BUSSINES UNDERSTANDING
 
@@ -39,24 +42,24 @@ Berdasarkan tujuan di atas dapat dihasilkan solusi dari proyek ini antara lain:
            
 2. Pembuatan model dipilih penggunaan model dengan algoritma Random Forest dan K-Nearest Neighbor. Algoritma itu dipilih karena mudah digunakan dan juga cocok untuk kasus ini. Berikut cara kerja kelebihan dan kekurangan algoritma Random Forest dan K-Nearest Neighbor:
 
-   Cara kerja Algoritma Random Forest
+   Cara kerja Algoritma Random Forest[5]:
    
         - Diawali dengan pemilihan k pada sampel dataset yang diambil secara acak dengan pengembalian
         - Menggunakan dataset untuk membangun  _decision tree_  ke-i
         - Mengulang langkah kedua langkah diatas sebanyak k.
         
-     Kelebihan dan kekurangan Algoritma Random Forest:
+     Kelebihan dan kekurangan Algoritma Random Forest[6]:
          - Kekurangan pada algoritma Random Forest yaitu interpretasi yang sulit dan membutuhkan tuning model yang tepat untuk data.
          - Kelebihannya yaitu dapat mengatasi  _noise_  dan  _missing value_  serta dapat mengatasi data dalam jumlah yang besar.
          
-      Cara kerja Algoritma K-Nearest Neighbor:
+      Cara kerja Algoritma K-Nearest Neighbor [7]:
       
         - Menentukan jumlah tetangga terdekat K.
         - Menghitung jarak dokumen  _testing_  ke dokumen  _training_
         - Mengurutkan data berdasarkan data yang mempunyai jarak Euclidean terkecil.
         - Menentukan kelompok testing berdasarkan label pada K.
         
-       Kelebihan dan kekurangan Algoritma K-Nearest Neighbor:
+       Kelebihan dan kekurangan Algoritma K-Nearest Neighbor [8]: 
     
          - Kekurangan pada algoritma KKN yaitu perlu menentukan nilai dari parameter K (jumlah dari tetangga terdekat), Pembelajaran berdasarkan jarak tidak jelas mengenai jenis jarak apa yang harus digunakan dan atribut mana yang harus digunakan untuk mendapatkan hasil yang terbaik dan Biaya komputasi cukup tinggi karena diperlukan perhitungan dari jarak tiap sample uji pada keseluruhan sample latih.
          - KNN memiliki beberapa kelebihan yaitu bahwa algoritmanya tangguh terhadap  _training_  data yang  _noisy_  dan efektif apabila data latihnya besar.
@@ -139,20 +142,25 @@ Berikut adalah tahapan-tahapan dalam melakukan pra-pemrosesan data:
 ![WhatsApp Image 2022-09-25 at 09 33 12](https://user-images.githubusercontent.com/111127023/192156476-8818ed8c-db59-42b8-83f9-fa89bd0a9692.jpeg)
 
 -  Melakukan mapping pada kolom diagnosis dari type object ke numerik agar bisa dibaca mesin. Dimana kanker jinak diubah ke nilai 0 dan kanker ganas diubah ke nilai 1.
+
 ![WhatsApp Image 2022-09-25 at 09 37 46](https://user-images.githubusercontent.com/111127023/192156531-8add6dec-79f6-43e5-8b10-a2ab74a5e775.jpeg)
 
 - Melakukan perhitungan jumlah baris terhadap kolom target.
+
 ![WhatsApp Image 2022-09-25 at 09 40 28](https://user-images.githubusercontent.com/111127023/192156571-f69145e1-9e5f-41b8-930d-728c0568ed9f.jpeg)
 
 - Melakukan pembagian dataset menjadi dengan 80% untuk data latih dan 20% untuk data uji Setelah melakukan pra-pemrosesan ke dataset, Data latih adalah data yang hanya digunakan untuk melatih model, sedangkan data uji adalah data yang hanya digunakan sebagai ujicoba model. Pembagian dataset ini menggunakan modul train_test_split dari scikit-learn.
+- 
 ![WhatsApp Image 2022-09-25 at 09 41 54](https://user-images.githubusercontent.com/111127023/192156617-563173c8-39c3-49ce-87b7-988a471f4fa0.jpeg)
 
 - Melakukan standardisasi data pada semua fitur data. Tahap terakhir yaitu melakukan standarisasi data. Hal ini dilakukan untuk membuat semua fitur berada dalam skala data yang sama yaitu dengan range 0-1. Strandadisasi data ini menggunakan fungsi StandardScaler dengan rumus:
+
 ![rumus](https://user-images.githubusercontent.com/111127023/192156722-8fee18db-d739-4a02-ab30-fa61ad93d384.png)
 
 # MODELING
 -- --
 Kemudian, setelah selesai dilakukan pra-pemrosesan pada dataset. Selanjutnya, modeling terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu Random Forest dan K-Nearest Neighbor dengan tanpa parameter tambahan. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji. Terakhir kedua model akan diukur nilai akurasinya. Perbandingan Hasil dari kedua seperti:
+
 ![WhatsApp Image 2022-09-25 at 09 47 51](https://user-images.githubusercontent.com/111127023/192156817-adbd527d-9bfc-4a74-b16b-74d6dfe0571d.jpeg)
 
 Pada model dengan algoritma Random Forest memiliki nilai akurasi, f1-score, recall dan precision sedikit lebih tinggi dibanding dengan algoritma K-Nearest Neighbor. Untuk membuktikannya, kedua model tersebut diuji pada data uji dan di visualisasikan pada confussion matrix seperti:
@@ -166,6 +174,7 @@ Pada model dengan algoritma Random Forest memiliki nilai akurasi, f1-score, reca
  Pada algoritma K-NN tidak jauh berbeda dengan algoritma random forest dimana bagian atas kiri merepresentasikan TN (True Negatif) yaitu data negatif yg diprediksi benar, dan bagian bawah kanan merupakan data positif yg di prediksi benar, selain itu merupakan data false negatif (atas kanan) dan false positif (bawah kiri), dimana hasil itu merupakan data negatif namun diprediksi positif maupun sebaliknya.
  
 Dengan hasil diatas dimana algoritma random forest menghasilkan nilai akurasi yg sedikit lebih tinggi, maka model dengan algoritma Random Forest merupakan model yang dipilih untuk digunakan pada project ini.
+
 ![WhatsApp Image 2022-09-25 at 09 49 16](https://user-images.githubusercontent.com/111127023/192156851-c1bc4c1c-c4ad-4b6a-81d4-bdf4c70bec6f.jpeg)
 
 # EVALUATION
@@ -197,4 +206,20 @@ Akurasi Akurasi ialah metrik untuk menghitung persentase dari total data yang di
 
 # REFERENSI
 -- --
+
+[1] Prahartiwi, L. I., & Dari, W. (2021). Komparasi Algoritma Naive Bayes, Decision Tree dan Support Vector Machine untuk Prediksi Penyakit Kanker Payudara, 51.https://ejournal.bsi.ac.id/ejurnal/index.php/jtk/article/view/9191/pdf.
+
+[2,3] Wibisono, G., & Hermawan, A. (2019). Faktor-Faktor Penentu Gejala Penyakit Kanker Payudara Dengan Pendekatan Jaringan Saraf Tiruan. JASIEK (Jurnal Aplikasi Sains, Informasi, Elektronika dan Komputer), 1(1), 2.https://www.jurnal.unmer.ac.id/index.php/jasiek/article/view/3098.
+
+[4] Maziida, S. R. (2018). KLASIFIKASI PENYAKIT DIABETES MELLITUS DENGAN MENGGUNAKAN PERBANDINGAN ALGORITMA J48 DAN RANDOM FOREST (STUDI KASUS: RUMAH SAKIT MUHAMMADIYAH LAMONGAN) (Doctoral dissertation, University of Muhammadiyah Malang). https://eprints.umm.ac.id/39299/.
+
+[5] Haristu, R. A., & Rosa, P. H. P. (2019). Penerapan Metode Random Forest Untuk Prediksi Win Ratio Pemain Player Unknown Battleground. MEANS (Media Informasi Analisa dan Sistem), 120-128. https://repository.usd.ac.id/35513/.
+
+[6] Maziida, S. R. (2018). KLASIFIKASI PENYAKIT DIABETES MELLITUS DENGAN MENGGUNAKAN PERBANDINGAN ALGORITMA J48 DAN RANDOM FOREST (STUDI KASUS: RUMAH SAKIT MUHAMMADIYAH LAMONGAN) (Doctoral dissertation, University of Muhammadiyah Malang). https://eprints.umm.ac.id/39299/.
+
+[7] Sani, R. R., Zeniarja, J., & Luthfiarta, A. (2016). Penerapan algoritma K-Nearest Neighbor pada information retrieval dalam penentuan topik referensi tugas akhir. Journal of Applied Intelligent System, 1(2), 123-133. https://publikasi.dinus.ac.id/index.php/jais/article/view/1189/.
+
+[8] Penyelenggara PS. Teknik Informa ka, Jurusan Ilmu Komputer FMIPA - Universitas Udayana Kampus Bukit Jimbaran. PROSIDING ISSN : X SEMINAR NASIONAL TEKNOLOGI INFORMASI & APLIKASINYA 2015 INOVASI TEKNOLOGI INFORMASI DAN KOMUNIKASI DALAM MENUNJANG TECHNOPRENEURSHIP. Universitas Udayana (2015). https://simdos.unud.ac.id/uploads/file_penelitian_1_dir/721bdb509a6f0bb9ccca6d7374b86759.pdf.
+
+--- **Ini adalah bagian akhir laporan** ---
 
