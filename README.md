@@ -205,6 +205,15 @@ Dengan hasil diatas dimana algoritma random forest menghasilkan nilai akurasi yg
 -- --
 Pada proyek ini, model yang dikembangkan adalah kasus klasifikasi dan menggunakan metriks akurasi, f1-score, recall dan precision. Berikut hasil pengukuran model yang dipilih yaitu model yang menggunakan algoritma Random Forest metriks akurasi, f1-score, recall dan precision.
 
+|   |  precision | recall | f1-score  | support | 
+| ----- | --- | ---- | --- | ---- | 
+|  0 | 0.942857  | 1.000000 | 0.970588 | 66.000000 | 
+|  1 | 1.000000  | 0.916667 | 0.956522 | 48.000000 |
+| accuracy  | 0.964912 |  0.964912 |  0.964912 | 0.964912 | 
+|  macro avg | 0.971429 | 0.958333 | 0.963555 | 114.000000 |
+| weighted avg  | 0.966917 | 0.964912 | 0.964666 | 114.000000 |
+
+
 ![WhatsApp Image 2022-09-25 at 09 50 45](https://user-images.githubusercontent.com/111127023/192157025-326eb93c-9f99-4535-95a6-6379dd5614fb.jpeg)
 
 Akurasi Akurasi ialah metrik untuk menghitung persentase dari total data yang diidentifikasi dan dinilai benar dengan rumus:
