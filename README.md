@@ -216,7 +216,7 @@ Pada proyek ini, model yang dikembangkan adalah kasus klasifikasi dan menggunaka
 
 ![WhatsApp Image 2022-09-25 at 09 50 45](https://user-images.githubusercontent.com/111127023/192157025-326eb93c-9f99-4535-95a6-6379dd5614fb.jpeg)
 
-Akurasi Akurasi ialah metrik untuk menghitung persentase dari total data yang diidentifikasi dan dinilai benar dengan rumus:
+Akurasi, ialah metrik untuk menghitung persentase dari total data yang diidentifikasi dan dinilai benar dengan rumus:
 
 ![rumus1](https://user-images.githubusercontent.com/111127023/192157163-b38d0145-902b-4d8f-a53a-f4f7431dc4e9.png)
 
@@ -225,17 +225,17 @@ Akurasi Akurasi ialah metrik untuk menghitung persentase dari total data yang di
 - False Positive (FP) - Type I Error : Kasus dimana model merupakan data negatif namun diprediksi sebagai data positif. Contohnya, pasien tidak menderita kanker (class 2) tetapi dari model yang telah memprediksi pasien tersebut menderita kanker (class 1).
 - False Negative (FN) - Type II Error : Kasus dimana model merupakan data negatif namun diprediksi sebagai data positif. Contohnya, pasien tidak menderita kanker (class 2) tetapi dari model yang telah memprediksi pasien tersebut menderita kanker (class 1).
 
-- Precision Precision merupakan metrik untuk memprediksi benar positif dari keseluruhan hasil yang diprediksi positf. Rumus precision seperti:
+- Precision, merupakan metrik untuk memprediksi benar positif dari keseluruhan hasil yang diprediksi positf. Rumus precision seperti:
 
-![rumus2](https://user-images.githubusercontent.com/111127023/192157235-a9c261e4-ce60-4af2-ba85-6c27c463d555.png)
+Precission = (TP) / (TP + FP)
 
-- Recall Recall merupakan metrik untuk memprediksi benar positif dibandingkan dengan keseluruhan data yang benar positif. Rumus precision:
+- Recall, merupakan metrik untuk memprediksi benar positif dibandingkan dengan keseluruhan data yang benar positif. Rumus precision:
 
-![rumus3](https://user-images.githubusercontent.com/111127023/192157266-ffe0ea03-3adf-4f96-82ad-63ad5d1e660c.png)
+Recall = (TP) / (TP + FN)
 
 - f1-score f1-score merupakan metrik untuk perbandingan rata-rata precision dan recall yang dibobotkan. Rumus f1-score
 
-![rumus4](https://user-images.githubusercontent.com/111127023/192157287-41a5fca2-d236-4bbf-ba1b-794de4924cc6.png)
+F1 Score = 2 * (Recall*Precission) / (Recall+Precission)
 
 # REFERENSI
 -- --
