@@ -139,6 +139,8 @@ Berikut adalah tahapan-tahapan dalam melakukan pra-pemrosesan data:
 
 - Melakukan pengecekan terhadap kolom diagnosis (fitur target) yang bertipe object. dimana kategori B merupakan sample Kanker Jinak dan M merupakan sample Kanker Ganas. fitur ini mengindintikasikan bahwa dari sample terdapat kategori kanker yang bersifat jinak dan kanker yang bersifat ganas. inilah fitur target yg ingin coba di prediksi pada project ini.
 
+- OneHotEncoder, salah satu teknik untuk mengubah data kategorik menjadi data numerik adalah dengan menggunakan One Hot Encoding atau yang juga dikenal sebagai dummy variables. One Hot Encoding mengubah data kategorik dengan membuat kolom baru untuk setiap kategori. 
+
 ![WhatsApp Image 2022-09-25 at 09 33 12](https://user-images.githubusercontent.com/111127023/192156476-8818ed8c-db59-42b8-83f9-fa89bd0a9692.jpeg)
 
 -  Melakukan mapping pada kolom diagnosis dari type object ke numerik agar bisa dibaca mesin. Dimana kanker jinak diubah ke nilai 0 dan kanker ganas diubah ke nilai 1.
@@ -150,7 +152,19 @@ Berikut adalah tahapan-tahapan dalam melakukan pra-pemrosesan data:
 ![WhatsApp Image 2022-09-25 at 09 40 28](https://user-images.githubusercontent.com/111127023/192156571-f69145e1-9e5f-41b8-930d-728c0568ed9f.jpeg)
 
 - Melakukan pembagian dataset menjadi dengan 80% untuk data latih dan 20% untuk data uji Setelah melakukan pra-pemrosesan ke dataset, Data latih adalah data yang hanya digunakan untuk melatih model, sedangkan data uji adalah data yang hanya digunakan sebagai ujicoba model. Pembagian dataset ini menggunakan modul train_test_split dari scikit-learn.
-- 
+
+Untuk menggunakannya, kita perlu mengimport Scikit-Learn terlebih dahulu, kemudian setelah itu kita dapat menggunakan fungsi train_test_split(). Setelah itu kita definisikan data yang menjadi source-nya (X)  dan juga data targetnya (y). Misalnya data source-nya adalah semua kolom kecuali kolom terakhir yang di ujung sebelah kanan dataset df, sedangkan data targetnya adalah kolom paling ujung kanan dengan nama kolom “Class”. Setelah didefinisikan, kita dapat langsung mengimplementasikan train/test split.
+
+X_train: Untuk menampung data source yang akan dilatih.
+
+X_test: Untuk menampung data target yang akan dilatih.
+
+y_train: Untuk menampung data source yang akan digunakan untuk testing.
+
+y_test: Untuk menampung data target yang akan digunakan untuk testing.
+
+X dan y adalah nama variabel yang digunakan saat mendefinisikan data source dan data target. Parameter test_size digunakan untuk mendefinisikan ukuran data testing. Dalam contoh di atas, test_size=0.2 berarti data yang digunakan sebagai data testing adalah sebesar 20% dari keseluruhan dataset. Selanjutnya, kita dapat menggunakannya untuk pemodelan dengan algoritma tertentu misalnya disini menggunakan Linear Regression. LinearRegression() ialah fungsi untuk mengimplementasikan algoritma Linear Regression di Python. Fungsi fit() digunakan untuk melatih model, predict() digunakan untuk memprediksi hasil model. 
+
 ![WhatsApp Image 2022-09-25 at 09 41 54](https://user-images.githubusercontent.com/111127023/192156617-563173c8-39c3-49ce-87b7-988a471f4fa0.jpeg)
 
 - Melakukan standardisasi data pada semua fitur data. Tahap terakhir yaitu melakukan standarisasi data. Hal ini dilakukan untuk membuat semua fitur berada dalam skala data yang sama yaitu dengan range 0-1. Strandadisasi data ini menggunakan fungsi StandardScaler dengan rumus:
@@ -159,6 +173,8 @@ Berikut adalah tahapan-tahapan dalam melakukan pra-pemrosesan data:
 
 # MODELING
 -- --
+
+Setiap algortima ini memiliki parameter dan nilai n_neighbors, k   dst ini memiliki nilai berapa nilai dari masing-masing parameter tersebut yang digunakan di laporan ini? jelaskan paramater beserta nilainya apa saja yang digunakan setiap algortima. Nilai nya nol dan satu pada algooritma random forest dan k-nearest neighbor. Untuk parameternya tidak ada tambahan. Algoritma random forest memiliki nilai akurasi 0.973684, f1-score, recall dan precision sedikit lebih tinggi dibanding dengan algoritma K-Nearest Neighbor. Kemudian, algoritma k-nearest neighbor mempunyai nilai akurasi 0.964912.
 Kemudian, setelah selesai dilakukan pra-pemrosesan pada dataset. Selanjutnya, modeling terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu Random Forest dan K-Nearest Neighbor dengan tanpa parameter tambahan. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji. Terakhir kedua model akan diukur nilai akurasinya. Perbandingan Hasil dari kedua seperti:
 
 ![WhatsApp Image 2022-09-25 at 09 47 51](https://user-images.githubusercontent.com/111127023/192156817-adbd527d-9bfc-4a74-b16b-74d6dfe0571d.jpeg)
