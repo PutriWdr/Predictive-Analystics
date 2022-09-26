@@ -177,6 +177,14 @@ X dan y adalah nama variabel yang digunakan saat mendefinisikan data source dan 
 Setiap algortima ini memiliki parameter dan nilai n_neighbors, k   dst ini memiliki nilai berapa nilai dari masing-masing parameter tersebut yang digunakan di laporan ini? jelaskan paramater beserta nilainya apa saja yang digunakan setiap algortima. Nilai nya nol dan satu pada algooritma random forest dan k-nearest neighbor. Untuk parameternya tidak ada tambahan. Algoritma random forest memiliki nilai akurasi 0.973684, f1-score, recall dan precision sedikit lebih tinggi dibanding dengan algoritma K-Nearest Neighbor. Kemudian, algoritma k-nearest neighbor mempunyai nilai akurasi 0.964912.
 Kemudian, setelah selesai dilakukan pra-pemrosesan pada dataset. Selanjutnya, modeling terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu Random Forest dan K-Nearest Neighbor dengan tanpa parameter tambahan. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji. Terakhir kedua model akan diukur nilai akurasinya. Perbandingan Hasil dari kedua seperti:
 
+|   |   |  0 |   |   | 1 |  |  |
+| ----- | --- | ---- | --- | ---- | ---| ---- | --- | 
+|   | accuracy  | f1-score | precision | recall | f1-score | precision | recall |
+|  RFC | 0.973684  | 0.977778 | 0.956522 | 1.0 | 0.967742 | 1.0	 | 0.937500 |
+|  KNNT | 0.964912  | 0.970588 | 0.942857 | 1.0 | 0.956522 | 1.0 | 0.916667 |
+
+
+
 ![WhatsApp Image 2022-09-25 at 09 47 51](https://user-images.githubusercontent.com/111127023/192156817-adbd527d-9bfc-4a74-b16b-74d6dfe0571d.jpeg)
 
 Pada model dengan algoritma Random Forest memiliki nilai akurasi, f1-score, recall dan precision sedikit lebih tinggi dibanding dengan algoritma K-Nearest Neighbor. Untuk membuktikannya, kedua model tersebut diuji pada data uji dan di visualisasikan pada confussion matrix seperti:
