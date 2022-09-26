@@ -68,8 +68,12 @@ Berdasarkan tujuan di atas dapat dihasilkan solusi dari proyek ini antara lain:
 
 ![WhatsApp Image 2022-09-24 at 14 41 30](https://user-images.githubusercontent.com/111127023/192123841-bdaefced-5909-44ed-a212-7377dcd4c0ac.jpeg)
 
+Gambar 1. Cover Dataset Kaggle
+
 
 Data pada project ini menggunakan data yang bersumber pada sebuah situs kaggle, dimana fokus pada data tersebut menjelaskan faktor-faktor yang akan mempengaruhi sebuah penyakit kanker payudara bersifat ganas dan jinak. Informasi dataset dapat dilihat pada tabel dibawah ini :
+
+Tabel 1. Rangkuman informasi Dataset
 
 | Jenis  | Keterangan |
 | ----- | --- |
@@ -77,6 +81,7 @@ Data pada project ini menggunakan data yang bersumber pada sebuah situs kaggle, 
 | Sumber | https://www.kaggle.com/datasets/yasserh/breast-cancer-dataset  |
 | Kategori  | Cancer, Women, Healthcare |
 | Jenis dan Ukuran Berkas | CSV (124.57 kB) |
+
 
 Pada berkas yang diunduh yakni cancer-breast.csv berisi 569 rows × 32 columns. Kolom-kolom tersebut terdiri dari 1 buah kolom bertipe objek dan 31 buah kolom bertipe numerik (tipe data float64). Dimana, penjelasan mengenai variabel-variable pada dataset cancer breast ini terdiri dari:
 
@@ -125,12 +130,19 @@ Berikut ini tahapan visualisasi data pada data preparation:
 -   Membagi dataset kedalam 2 bentuk variable, yaitu variable untuk kolom tipe numerik dan variable kolom untuk tipe object
 -   Lalu, melakukan visualisasi distribusi categorial, dimana ini digunakan untuk menghitung jumlah sample Kanker Ganas atau positif (M) dan kanker Jinak atau negatif (B). pada project ini terdapat 357 jumlah data sampel kanker jinak (B) dan 212 data sample kanker ganas (M).
 
+Gambar 2. Distribusi kolom kategorial Pada gambar di atas menunjukkan diagnosis kanker jinak lebih mendominasi.
+
 ![download (1)](https://user-images.githubusercontent.com/111127023/192125476-80085b3d-e4c8-4616-8829-b8211e1d5c5c.png)
 
 - Kemudian, melakukan visualisasi distribusi numerik yang dapat dilihat lebih rinci sebagai berikut:
+
+Gambar 3. Distribusi kolom numerik
+
 ![download (2)](https://user-images.githubusercontent.com/111127023/192125506-4eae92e0-c5b2-4009-b0eb-b2fad0b694a3.png)
 
 - Lalu, visualisasi dilakukan untuk mengetahui korelasi antar fitur yg terdapat pada dataset sebagai berikut:
+
+Gambar 4. Korelasi antar kolom
 ![download (3)](https://user-images.githubusercontent.com/111127023/192125529-9870c661-ed48-4a0c-8221-6919b67269ba.png)
 
 # DATA PREPARATION
@@ -141,13 +153,20 @@ Berikut adalah tahapan-tahapan dalam melakukan pra-pemrosesan data:
 
 - OneHotEncoder, salah satu teknik untuk mengubah data kategorik menjadi data numerik adalah dengan menggunakan One Hot Encoding atau yang juga dikenal sebagai dummy variables. One Hot Encoding mengubah data kategorik dengan membuat kolom baru untuk setiap kategori. 
 
+Gambar 5. Pengecekan pada kolom diagnosis yang bertipe objek B ditandai sebagai kanker jinak dan M ditandai kanker ganas
+
 ![WhatsApp Image 2022-09-25 at 09 33 12](https://user-images.githubusercontent.com/111127023/192156476-8818ed8c-db59-42b8-83f9-fa89bd0a9692.jpeg)
 
 -  Melakukan mapping pada kolom diagnosis dari type object ke numerik agar bisa dibaca mesin. Dimana kanker jinak diubah ke nilai 0 dan kanker ganas diubah ke nilai 1.
 
+Tabel 2. Mapping pada kolom diagnosis Pada gambar di atas menunjukkan hasil mapping pada kolom diagnosis dari type objek ke numerik agar bisa dibaca mesin.
+
+
 ![WhatsApp Image 2022-09-25 at 09 37 46](https://user-images.githubusercontent.com/111127023/192156531-8add6dec-79f6-43e5-8b10-a2ab74a5e775.jpeg)
 
 - Melakukan perhitungan jumlah baris terhadap kolom target.
+
+Gambar 6. Menghitung jumlah baris pada kolom target
 
 ![WhatsApp Image 2022-09-25 at 09 40 28](https://user-images.githubusercontent.com/111127023/192156571-f69145e1-9e5f-41b8-930d-728c0568ed9f.jpeg)
 
@@ -165,17 +184,61 @@ y_test: Untuk menampung data target yang akan digunakan untuk testing.
 
 X dan y adalah nama variabel yang digunakan saat mendefinisikan data source dan data target. Parameter test_size digunakan untuk mendefinisikan ukuran data testing. Dalam contoh di atas, test_size=0.2 berarti data yang digunakan sebagai data testing adalah sebesar 20% dari keseluruhan dataset. Selanjutnya, kita dapat menggunakannya untuk pemodelan dengan algoritma tertentu misalnya disini menggunakan Linear Regression. LinearRegression() ialah fungsi untuk mengimplementasikan algoritma Linear Regression di Python. Fungsi fit() digunakan untuk melatih model, predict() digunakan untuk memprediksi hasil model. 
 
+Gambar 7. Pembagian dataset ini menggunakan modul train_test_split dari scikit-learn.
+
 ![WhatsApp Image 2022-09-25 at 09 41 54](https://user-images.githubusercontent.com/111127023/192156617-563173c8-39c3-49ce-87b7-988a471f4fa0.jpeg)
 
 - Melakukan standardisasi data pada semua fitur data. Tahap terakhir yaitu melakukan standarisasi data. Hal ini dilakukan untuk membuat semua fitur berada dalam skala data yang sama yaitu dengan range 0-1. Strandadisasi data ini menggunakan fungsi StandardScaler dengan rumus:
+
+Gambar 8.  fungsi StandardScaler:
 
 ![rumus](https://user-images.githubusercontent.com/111127023/192156722-8fee18db-d739-4a02-ab30-fa61ad93d384.png)
 
 # MODELING
 -- --
+Semua model dilatih menggunakan parameter default yang disediakan library sklearn.
 
-Setiap algortima ini memiliki parameter dan nilai n_neighbors, k   dst ini memiliki nilai berapa nilai dari masing-masing parameter tersebut yang digunakan di laporan ini? jelaskan paramater beserta nilainya apa saja yang digunakan setiap algortima. Nilai nya nol dan satu pada algooritma random forest dan k-nearest neighbor. Untuk parameternya tidak ada tambahan. Algoritma random forest memiliki nilai akurasi 0.973684, f1-score, recall dan precision sedikit lebih tinggi dibanding dengan algoritma K-Nearest Neighbor. Kemudian, algoritma k-nearest neighbor mempunyai nilai akurasi 0.964912.
+**Random Forest**
+
+Algoritma random forest memiliki nilai akurasi 0.973684, f1-score, recall dan precision sedikit lebih tinggi dibanding dengan algoritma K-Nearest Neighbor. Kemudian, algoritma k-nearest neighbor mempunyai nilai akurasi 0.964912. model prediksi yang termasuk teknik bagging dengan terdiri dari beberapa model dan bekerja secara bersama-sama. Ide dibalik model ensemble adalah sekelompok model yang bekerja bersama menyelesaikan masalah. Sehingga, tingkat keberhasilan akan lebih tinggi dibanding model yang bekerja sendirian. Pada model ensemble, setiap model harus membuat prediksi secara independen. kemudian, prediksi dari setiap model ensemble ini digabungkan untuk membuat prediksi akhir.
+Algoritma yang cocok untuk teknik bagging ini adalah decision tree. Nah, random forest pada dasarnya adalah versi bagging dari algoritma decision tree. Bayangkan Anda memiliki satu bag (tas) random forest yang berisi beberapa model decision tree. Model decision tree masing-masing memiliki hyperparameter yang berbeda dan dilatih pada beberapa bagian (subset) data yang berbeda juga. Teknik pembagian data pada algoritma decision tree adalah memilih sejumlah fitur dan sejumlah sampel secara acak dari dataset yang terdiri dari n fitur dan m sampel. Alasan inilah mengapa algoritma ini disebut sebagai random forest. Karena algoritma ini disusun dari banyak algoritma pohon (decision tree) yang pembagian data dan fiturnya dipilih secara acak.
+
+Tahapan Umum Cara kerja Random Forest
+
+- Diawali dengan pemilihan k pada sampel dataset yang diambil secara acak dengan pengembalian.
+- Gunakan dataset untuk membangun decision tree ke-i
+- Ulangi langkah kedua langkah di atas sebanyak k.
+
+Pada kasus proyek ini bertipe regresi maka dari itu yang digunakan adalah Random Forest Regressor dari library scikit-learn.dengan beberapa nilai parameter. Berikut adalah parameter-parameter yang digunakan:
+
+- n_estimator: jumlah trees (pohon) di forest. Di sini kita set n_estimator=50.
+- max_depth: kedalaman atau panjang pohon. Ia merupakan ukuran seberapa banyak pohon dapat membelah (splitting) untuk membagi setiap node ke dalam jumlah pengamatan yang diinginkan. di proyek ini menggunakan max_depth = 16 sebagai ukuran panjang banyaknya pohon yang dapat membelah (splitting) untuk membagi setiap node ke dalam jumlah pengamatan
+- random_state: digunakan untuk mengontrol random number generator yang digunakan, di proyek ini menggunakan random_state = 55.
+- n_jobs: jumlah job (pekerjaan) yang digunakan secara paralel. Ia merupakan komponen untuk mengontrol thread atau proses yang berjalan secara paralel. n_jobs=-1 artinya semua proses berjalan secara paralel.
+
+**KNN**
+
+KNN bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k tetangga terdekat (dengan k adalah sebuah angka positif). Nah, itulah mengapa algoritma ini dinamakan K-nearest neighbor (sejumlah k tetangga terdekat). Pada kasus proyek ini menggunakan n_neighbors = 10 tetangga dengan catatan Pemilihan nilai k sangat penting dan berpengaruh terhadap performa model. kemudian metric Euclidean untuk mengukur jarak antara titik. Pada tahap ini kita hanya melatih data training dan menyimpan data testing untuk tahap evaluasi yang akan dibahas di Modul Evaluasi Model.
+
+**Boosting**
+
+Algoritma ini bertujuan untuk meningkatkan performa atau akurasi prediksi. Caranya adalah dengan menggabungkan beberapa model sederhana dan dianggap lemah (weak learners) sehingga membentuk suatu model yang kuat (strong ensemble learner). Algoritma boosting muncul dari gagasan mengenai apakah algoritma yang sederhana seperti linear regression dan decision tree dapat dimodifikasi untuk dapat meningkatkan performa. Algoritma ini sangat powerful dalam meningkatkan akurasi prediksi. Algoritma boosting sering mengungguli model yang lebih sederhana seperti logistic regression dan random forest. Beberapa pemenang kompetisi di platform Kaggle menyatakan bahwa mereka menggunakan algoritma boosting atau kombinasi beberapa algoritma boosting dalam modelnya. Meskipun demikian, hal ini tetap bergantung pada kasus per kasus, ruang lingkup masalah, dan dataset yang digunakan. Dilihat dari caranya memperbaiki kesalahan pada model sebelumnya, algoritma boosting terdiri dari dua metode:
+
+- Adaptive boosting
+- Gradient boosting
+
+Pada proyek ini , kita akan menggunakan metode adaptive boosting. Salah satu metode adaptive boosting yang terkenal adalah AdaBoost, dikenalkan oleh Freund and Schapire (1995) Pertanyaannya adalah, bagaimana AdaBoost bekerja ?
+
+Cara Kerja AdaBOOST Awalnya, semua kasus dalam data latih memiliki weight atau bobot yang sama setelah itu model akan memeriksa apakah observasi yang dilakukan sudah benar? lalu Bobot yang lebih tinggi kemudian diberikan pada model yang salah sehingga mereka akan dimasukkan ke dalam tahapan selanjutnya. Proses iteratif ini berlanjut sampai model mencapai akurasi yang diinginkan kemudian membangun model pada dataset pelatihan, kemudian model kedua dibangun untuk memperbaiki kesalahan yang ada pada model pertama. Prosedur ini dilanjutkan sampai dan kecuali kesalahan diminimalkan, dan kumpulan data diprediksi dengan benar.
+
+Berikut merupakan parameter-parameter yang digunakan pada proyek ini :
+
+- learning_rate: bobot yang diterapkan pada setiap regressor di masing-masing proses iterasi boosting, pada proyek ini digunakan learning_rate = 0.05
+- random_state: digunakan untuk mengontrol random number generator yang digunakan, pada proyek ini digunakan random_state = 55
+
 Kemudian, setelah selesai dilakukan pra-pemrosesan pada dataset. Selanjutnya, modeling terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu Random Forest dan K-Nearest Neighbor dengan tanpa parameter tambahan. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji. Terakhir kedua model akan diukur nilai akurasinya. Perbandingan Hasil dari kedua seperti:
+
+Tabel 2. Perbandingan Hasil dari kedua model:
 
 |   |   |  0 |   |   | 1 |  |  |
 | ----- | --- | ---- | --- | ---- | ---| ---- | --- | 
@@ -184,13 +247,13 @@ Kemudian, setelah selesai dilakukan pra-pemrosesan pada dataset. Selanjutnya, mo
 |  KNNT | 0.964912  | 0.970588 | 0.942857 | 1.0 | 0.956522 | 1.0 | 0.916667 |
 
 
-
-![WhatsApp Image 2022-09-25 at 09 47 51](https://user-images.githubusercontent.com/111127023/192156817-adbd527d-9bfc-4a74-b16b-74d6dfe0571d.jpeg)
-
 Pada model dengan algoritma Random Forest memiliki nilai akurasi, f1-score, recall dan precision sedikit lebih tinggi dibanding dengan algoritma K-Nearest Neighbor. Untuk membuktikannya, kedua model tersebut diuji pada data uji dan di visualisasikan pada confussion matrix seperti:
 
 - Confussion Matrix Algoritma Random Forest
+
  Algoritma dibawah menjelaskan bahwa bagian atas kiri merepresentasikan TN (True negatif) yaitu data negatif yg diprediksi benar, dan bagian bawah kanan merupakan data positif yg di prediksi benar, selain itu merupakan data false negatif (atas kanan) dan false positif (bawah kiri), dimana hasil itu merupakan data negatif namun diprediksi positif maupun sebaliknya.
+
+Gambar 9. Confussion Matrix algoritma Random Forest:
 
 ![WhatsApp Image 2022-09-25 at 09 48 35](https://user-images.githubusercontent.com/111127023/192156846-aeac6e26-d055-45a7-9788-508b137e413d.jpeg)
 
@@ -199,11 +262,17 @@ Pada model dengan algoritma Random Forest memiliki nilai akurasi, f1-score, reca
  
 Dengan hasil diatas dimana algoritma random forest menghasilkan nilai akurasi yg sedikit lebih tinggi, maka model dengan algoritma Random Forest merupakan model yang dipilih untuk digunakan pada project ini.
 
+Gambar 10. Confussion Matrix algoritma K-Nearest Neighbor:
+
 ![WhatsApp Image 2022-09-25 at 09 49 16](https://user-images.githubusercontent.com/111127023/192156851-c1bc4c1c-c4ad-4b6a-81d4-bdf4c70bec6f.jpeg)
 
 # EVALUATION
 -- --
+Pada Proyek ini menggunakan model machine learning bertipe regresi yang berarti Jika prediksi mendekati nilai sebenarnya, performanya baik. Sedangkan jika tidak, performanya buruk. Secara teknis, selisih antara nilai sebenarnya dan nilai prediksi disebut eror. Maka, semua metrik mengukur seberapa kecil nilai error tersebut.
+
 Pada proyek ini, model yang dikembangkan adalah kasus klasifikasi dan menggunakan metriks akurasi, f1-score, recall dan precision. Berikut hasil pengukuran model yang dipilih yaitu model yang menggunakan algoritma Random Forest metriks akurasi, f1-score, recall dan precision.
+
+Tabel 3. Hasil pengukuran model yang dipilih yaitu model yang menggunakan algoritma Random Forest
 
 |   |  precision | recall | f1-score  | support | 
 | ----- | --- | ---- | --- | ---- | 
@@ -213,10 +282,17 @@ Pada proyek ini, model yang dikembangkan adalah kasus klasifikasi dan menggunaka
 |  macro avg | 0.971429 | 0.958333 | 0.963555 | 114.000000 |
 | weighted avg  | 0.966917 | 0.964912 | 0.964666 | 114.000000 |
 
+**Kesimpulan**
+
+Dapat dilihat dari tiga model Algoritma yang dikembangkan, dapat disimpulkan dari hasil perbandingan serta visualisasi perbandingan prediksi tiga Algoritma yaitu KNN, Random Forest, dan AdaBoost. Dapat disimpulkan model boosting memiliki nilai error pada data test yang paling kecil kemudian model dengan knn memiliki nilai error yang sedikit. Sedangkan model random forest miliki lebih banyak nilai error dibandingkan boosting dan knn.
+
+Gambar 11. 
 
 ![WhatsApp Image 2022-09-25 at 09 50 45](https://user-images.githubusercontent.com/111127023/192157025-326eb93c-9f99-4535-95a6-6379dd5614fb.jpeg)
 
 Akurasi, ialah metrik untuk menghitung persentase dari total data yang diidentifikasi dan dinilai benar dengan rumus:
+
+Gambar 12. Rumus menghitung persentase dari total data yang diidentifikasi
 
 ![rumus1](https://user-images.githubusercontent.com/111127023/192157163-b38d0145-902b-4d8f-a53a-f4f7431dc4e9.png)
 
